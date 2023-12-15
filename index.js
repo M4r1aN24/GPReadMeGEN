@@ -3,9 +3,18 @@ const path = require('path');
 const inquirer = require("inquirer");
 const generateMarkdown = require("./generateMarkdown");
 
+function generateTableOfContents(sections) {
+    const toc = sections.map((section, index) => {
+        const sectionLink = `[${index + 1}. ${section}](#${section.toLowerCase().replace(/\s/g, '-')})`;
+        return sectionLink;
+    });
+    return toc.join('\n');
+}
+
+const sections = ['Description', 'Installation', 'Usage', 'License', 'Contributing', 'Tests', 'Questions'];
+
 // array of questions for user
 const questions =[
-    inquirer.prompt([
     // The title of my project
     {
       type: 'input',
@@ -57,23 +66,65 @@ const questions =[
     },
     // Questions
     {
-        type: 'input',
+        type: 'confirm',
         name: 'questions',
         message: "If there's any questions or request, you can contact me at: gabrielpamfill2000@yahoo.com."
     },
-  ]),
-];
+  ];
 
-// function to write README file
-function writeToFile(fileName, data) {
+// // function to write README file
+inquirer.prompt(questions).then((answers) => {
+    // Create the README content
+    const readmeContent = `
+# ${answers.title}
+
+${answers.description}
+
+## Table of Contents
+
+${generateTableOfContents(sections)}
+
+## Installation
+
+${answers.installation}
+
+## Usage
+
+${answers.usage}
+
+## License
+
+This project is licensed under the ${answers.license} License.
+
+## Contributing
+
+${answers.contribution}
+
+## Tests
+
+${answers.tests}
+
+## Questions
+
+If you have any questions or requests, you can contact me at: ${answers.questions}
+`;
+
+    // Write the content to the README file
+    fs.writeFileSync('README.md', readmeContent, 'utf-8');
+
+    console.log('README.md file has been created successfully.');
+});
 
 
-}
+// function writeToFile(fileName, data) {
+    
 
-// function to initialize program
-function init() {
+// }
 
-}
+// // function to initialize program
+// function init() {
 
-// function call to initialize program
-init();
+// }
+
+// // function call to initialize program
+// init();
