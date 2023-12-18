@@ -1,7 +1,7 @@
 
-# 
+# GPReadMeGen
 
-
+This project has been build with the motivation of creating a professional README file with the help of Node.js and ES6
 
 ## Table of Contents
 
@@ -15,11 +15,11 @@
 
 ## Installation
 
-
+To install the project please clone the SSH key from my repository.
 
 ## Usage
 
-
+To use the application write node index.js in your terminal (VS Code) and answer the prompted questions.
 
 ## License
 
@@ -27,7 +27,7 @@ This project is licensed under the MIT License.
 
 ## Contributing
 
-
+Gabriel Pamfil - (myself)
 
 ## Tests
 
