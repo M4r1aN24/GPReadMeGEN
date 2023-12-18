@@ -17,9 +17,13 @@ This project has been build with the motivation of creating a professional READM
 
 To install the project please clone the SSH key from my repository.
 
+https://github.com/M4r1aN24/GPReadMeGEN
+
 ## Usage
 
-To use the application write node index.js in your terminal (VS Code) and answer the prompted questions.
+To use the application write node index.js in your terminal (VS Code) and answer the prompted questions as show in the below video.
+
+https://drive.google.com/file/d/1Wvgo08QW2srSXQdltzj0fRPoDLVG3JlE/view
 
 ## License
 
@@ -35,4 +39,4 @@ Gabriel Pamfil - (myself)
 
 ## Questions
 
-If you have any questions or requests, you can contact me at: 
+If you have any questions or requests, you can contact me at gabrielpamfil2000@yahoo.com 
