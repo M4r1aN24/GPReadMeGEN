@@ -25,19 +25,13 @@ const questions =[
     {
       type: 'input',
       name: 'description',
-      message: 'Please input a short description of your project',
-    },
-    // Table of Contents
-    {
-      type: 'input',
-      name: 'contents',
-      message: 'Table of contents:',
+      message: 'Please input a short description of your project:',
     },
     // Installation
     {
       type: 'input',
       name: 'installation',
-      message: 'Please input the installation process.',
+      message: 'Please input the installation process:',
     },
     // Usage
     {
@@ -66,16 +60,17 @@ const questions =[
     },
     // Questions
     {
-        type: 'confirm',
         name: 'questions',
         message: "If there's any questions or request, you can contact me at: gabrielpamfill2000@yahoo.com."
     },
   ];
 
-// // function to write README file
+// function to initialize program
+function init() {
+  // // function to write README file
 inquirer.prompt(questions).then((answers) => {
-    // Create the README content
-    const readmeContent = `
+  // Create the README content
+  const readmeContent = `
 # ${answers.title}
 
 ${answers.description}
@@ -109,22 +104,13 @@ ${answers.tests}
 If you have any questions or requests, you can contact me at: ${answers.questions}
 `;
 
-    // Write the content to the README file
-    fs.writeFileSync('README.md', readmeContent, 'utf-8');
+  // Write the content to the README file
+  fs.writeFileSync('README.md', readmeContent, 'utf-8');
 
-    console.log('README.md file has been created successfully.');
+  console.log('README.md file has been created successfully.');
 });
 
+}
 
-// function writeToFile(fileName, data) {
-    
-
-// }
-
-// // function to initialize program
-// function init() {
-
-// }
-
-// // function call to initialize program
-// init();
+// function call to initialize program
+init();
